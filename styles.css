@@ -2,6 +2,8 @@
     --clr-light: #ECECEC;
     --clr-dark: #353535;
     --clr-accent: #66796B;
+    --clr-accent-dark: #4F5E53;
+    --clr-accent-light: #A5C4AD;
 }
 
 * {
@@ -217,6 +219,90 @@
     box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.7);
     border: 3px solid black;
 }
+
+.popup .overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+}
+
+.popup .popup-container {
+    position: absolute;
+    height: 70%;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 1px solid black;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+.popup-container .popup-header {
+    position: relative;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    text-align: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.popup-header h1 {
+    height: 100%;
+    width: fit-content;
+    font-size: 35px;
+}
+
+.popup-header .close-popup-button {
+    height: 100%;
+    width: fit-content;
+    color: var(--clr-light);
+    border: none;
+    outline: none;
+    appearance: none;
+    background: none;
+    border-radius: 50%;
+}
+
+.popup-header .close-popup-button .close-icon{
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.popup-container .popup-sidebar {
+    background-color: var(--clr-accent-dark);
+    position: absolute;
+    height: calc(100% - 60px);   
+    width: 200px;
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.popup-container .popup-main-content {
+    background-color: var(--clr-accent);
+    position: absolute;
+    left: 200px;
+    height: calc(100% - 60px);   
+    width: calc(100% - 200px);
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup.active .popup-container {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 
 @media screen and (max-width: 767px){
     .sidebar {

@@ -3,6 +3,7 @@ const home_btn = document.getElementById('home');
 const todo_btn = document.getElementById('todo');
 const project_btn = document.getElementById('project');
 const notes_btn = document.getElementById('notes');
+const popup_btn = document.getElementById('popup')
 var homeIsActive = 'home';
 var todoIsActive = 'todo';
 var projectIsActive = 'project';
@@ -43,6 +44,11 @@ function toggleMainContent(isActive) {
         notes_contents.style.display = "flex";
     }
 }
+
+function togglePopup() {
+    popup_btn.classList.toggle('active');
+}
+
 home_btn.addEventListener('click', function(){
     toggleMainContent(homeIsActive);
 });

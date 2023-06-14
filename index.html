@@ -56,11 +56,12 @@
             </ul>
         </nav>
         <div class="add-item">
-            <button type="button" class="add-button">
+            <button type="button" onclick="togglePopup()" class="add-button">
                 <i class='bx bx-plus plus-button'></i>
             </button>
         </div>
     </div>
+
 
     <div class="main-container">
         <div class="home-contents">
@@ -89,6 +90,39 @@
                 <h2 class="section-name">Notes</h2>
             </section>
         </div> 
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="overlay">
+            <div class="popup-container">
+                <div class="popup-header">
+                    <h1>Create new:</h1>
+                    <button type="button" onclick="togglePopup()" class="close-popup-button">
+                        <i class='bx bx-x-circle close-icon'></i>
+                    </button>
+                </div>
+                <div class="popup-sidebar">
+                    <ul class="popup-nav">
+                        <li class="popup-nav-item">
+                            <a id="popup_todo">
+                                <span>To-Do</span>
+                            </a>
+                        </li>
+                        <li class="popup-nav-item">
+                            <a id="popup_project">
+                                <span>Project</span>
+                            </a>
+                        </li>
+                        <li class="popup-nav-item">
+                            <a id="popup_note">
+                                <span>Note</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="popup-main-content"></div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
