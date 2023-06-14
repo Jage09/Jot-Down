@@ -23,32 +23,32 @@
         <div class="sidebar-header"><!--div for icon and Website name-->
             <i class='bx bx-edit header-icon'></i>
             <span class="title">Jot Down</span>
-            <button type="button" class="hamburger">
+            <button type="button" onclick="toggleSidebar()" class="hamburger">
                 <div class="bar"></div>
             </button>
         </div> 
         <nav class="sidebar-nav">
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="#">
+                    <a id="home">
                         <i class='bx bxs-home nav-icon'></i>
                         <span>Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#">
+                    <a id="todo">
                         <i class='bx bx-clipboard nav-icon'></i>
                         <span>To-Dos</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#">
+                    <a id="project">
                         <i class='bx bxs-bulb nav-icon'></i>
                         <span>Projects</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#">
+                    <a id="notes">
                         <i class='bx bxs-pencil nav-icon'></i>
                         <span>Notes</span>
                     </a>
@@ -62,8 +62,33 @@
         </div>
     </div>
 
-    <div class="main-content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consequatur dolores quis molestias hic provident velit, distinctio ab inventore delectus voluptatibus repellat, illo adipisci quo placeat maxime, temporibus quod dolor!
+    <div class="main-container">
+        <div class="home-contents">
+            <section class="section-todo">
+                <h2 class="section-name">To-Dos</h2>
+            </section>
+            <section class="section-project">
+                <h2 class="section-name">Projects</h2>
+            </section>
+            <section class="section-notes">
+                <h2 class="section-name">Notes</h2>
+            </section>
+        </div>
+        <div class="todo-contents">
+            <section class="section-todo">
+                <h2 class="section-name">To-Dos</h2>
+            </section>
+        </div>
+        <div class="project-contents">
+            <section class="section-project">
+                <h2 class="section-name">Projects</h2>
+            </section>
+        </div>
+        <div class="notes-contents">
+            <section class="section-notes">
+                <h2 class="section-name">Notes</h2>
+            </section>
+        </div> 
     </div>
 
     <script src="script.js"></script>
