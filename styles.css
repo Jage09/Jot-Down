@@ -148,7 +148,7 @@
 
 .main-container {
     position: relative;
-    background-color: var(--clr-accent);
+    background-color: var(--clr-accent-dark);
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
@@ -166,20 +166,13 @@
     /* border: 2px solid black; */
 }
 
-.home-contents .section-todo {
-    width: 45%;
-    height: 57%;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.7);
-    border: 3px solid black;
-}
-
+.home-contents .section-todo,
 .home-contents .section-project {
     width: 45%;
     height: 57%;
     padding: 1rem 2rem;
     border-radius: 50px;
+    background-color: var(--clr-accent);
     box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.7);
     border: 3px solid black;
 }
@@ -189,6 +182,7 @@
     height: 38%;
     padding: 1rem 2rem;
     border-radius: 50px;
+    background-color: var(--clr-accent);
     box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.7);
     border: 3px solid black;
 }
@@ -216,6 +210,7 @@
     height: 100%;
     padding: 1rem 2rem;
     border-radius: 50px;
+    background-color: var(--clr-accent);
     box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.7);
     border: 3px solid black;
 }
@@ -279,11 +274,46 @@
 
 .popup-container .popup-sidebar {
     background-color: var(--clr-accent-dark);
+    color: var(--clr-light);
     position: absolute;
     height: calc(100% - 60px);   
     width: 200px;
     box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.4);
     z-index: 1;
+}
+
+.popup-sidebar .popup-nav {
+    list-style-type: none;
+    padding: 0;
+}
+
+.popup-nav .popup-nav-item {
+    height: 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.popup-nav .popup-nav-item a {
+    color: var(--clr-light);
+    width: 60%;
+    align-items: center;
+    border-radius: 1rem;
+    text-decoration: none;
+    padding: .1rem .5rem;
+}
+
+.popup-nav .popup-nav-item a:hover {
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+}
+
+.popup-nav-item a span {
+    font-size: 27px;
+    font-weight: 600;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .popup-container .popup-main-content {
