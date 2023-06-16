@@ -121,7 +121,7 @@
                     <div class="popup-todo-contents">
                         <form class="todo-form">
                             <div class="task">
-                                <input type="text" id="title" name="title" placeholder="Title: Take out trash" maxlength="50" required>
+                                <input type="text" id="todo_title" name="todo_title" placeholder="Title: e.g Take out trash" maxlength="50" required>
                                 <input type="text" id="details" name="details" placeholder="Details: e.g internet, phone, rent." size="50" required>
                             </div>
                             <div class="task-due-date">
@@ -135,11 +135,22 @@
                                 <input type="radio" id="high" name="priority" value="high">
                                 <label for="high">High</label>
                             </div>
-                                <input type="submit">
+                                <input type="submit" value="Add To-Do">
                         </form>
                     </div>
-                    <div class="popup-project-contents">Project</div>
-                    <div class="popup-notes-contents">Notes</div>
+                    <div class="popup-project-contents">
+                        <div class="project-title">
+                            <input type="text" id="project_title" name="project_title" placeholder="Title: e.g Treehouse" required>
+                        </div>
+                        <input type="submit" value="Create Project">
+                    </div>
+                    <div class="popup-notes-contents">
+                        <div class="note-task">
+                            <input type="text" id="todo_title" name="todo_title" placeholder="Title:" maxlength="50" required>
+                            <input type="text" id="details" name="details" placeholder="Details:" size="50" required>
+                        </div>
+                        <input type="submit" value="Create Note">
+                    </div>
                 </div>
             </div>
         </div>

@@ -16,9 +16,10 @@ const notesIsActive = 'notes';
 const popupTodoIsActive = 'popup_todo';
 const popupProjectIsActive = 'popup_project';
 const popupNotesIsActive = 'popup_note';
-// menu_btn.addEventListener('click', function (){
-//     menu_btn.classList.toggle('is-active');
-// });
+
+const popup_todo_contents = document.querySelector(".popup-todo-contents");
+const popup_project_contents = document.querySelector(".popup-project-contents");
+const popup_notes_contents = document.querySelector(".popup-notes-contents");
 
 function toggleSidebar() {
     sidebar_btn.classList.toggle('is-active');
@@ -55,25 +56,24 @@ function toggleMainContent(isActive) {
 
 function togglePopup() {
     popup_btn.classList.toggle('active');
+    popup_todo_contents.style.display = "block";
+    popup_project_contents.style.display = "none";
+    popup_notes_contents.style.display = "none";
 }
 
 function togglePopupContent(isActive){
-    let popup_todo_contents = document.querySelector(".popup-todo-contents");
-    let popup_project_contents = document.querySelector(".popup-project-contents");
-    let popup_notes_contents = document.querySelector(".popup-notes-contents");
-
     if(isActive == popupTodoIsActive){
-        popup_todo_contents.style.display = "flex";
+        popup_todo_contents.style.display = "block";
         popup_project_contents.style.display = "none";
         popup_notes_contents.style.display = "none";
     } else if(isActive == popupProjectIsActive) {
         popup_todo_contents.style.display = "none";
-        popup_project_contents.style.display = "flex";
+        popup_project_contents.style.display = "block";
         popup_notes_contents.style.display = "none";
     } else if(isActive == popupNotesIsActive) {
         popup_todo_contents.style.display = "none";
         popup_project_contents.style.display = "none";
-        popup_notes_contents.style.display = "flex";
+        popup_notes_contents.style.display = "block";
     } 
 }
 home_btn.addEventListener('click', function(){
