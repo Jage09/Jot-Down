@@ -22,7 +22,7 @@
     <div class="sidebar"> <!--Main div for sidebar-->
         <div class="sidebar-header"><!--div for icon and Website name-->
             <i class='bx bx-edit header-icon'></i>
-            <span class="title">Jot Down</span>
+            <span class="header-title">Jot Down</span>
             <button type="button" onclick="toggleSidebar()" class="hamburger">
                 <div class="bar"></div>
             </button>
@@ -61,8 +61,6 @@
             </button>
         </div>
     </div>
-
-
     <div class="main-container">
         <div class="home-contents">
             <section class="section-todo">
@@ -91,7 +89,6 @@
             </section>
         </div> 
     </div>
-
     <div class="popup" id="popup">
         <div class="overlay">
             <div class="popup-container">
@@ -120,7 +117,30 @@
                         </li>
                     </ul>
                 </div>
-                <div class="popup-main-content"></div>
+                <div class="popup-main-content">
+                    <div class="popup-todo-contents">
+                        <form class="todo-form">
+                            <div class="task">
+                                <input type="text" id="title" name="title" placeholder="Title: Take out trash" maxlength="50" required>
+                                <input type="text" id="details" name="details" placeholder="Details: e.g internet, phone, rent." size="50" required>
+                            </div>
+                            <div class="task-due-date">
+                                <input type="date" id="due_date" name="due-date" required>
+                            </div>
+                            <div class="task-priority">    
+                                <input type="radio" id="low" name="priority" value="low">
+                                <label for="low">Low</label>
+                                <input type="radio" id="medium" name="priority" value="medium" required>
+                                <label for="medium">Medium</label>
+                                <input type="radio" id="high" name="priority" value="high">
+                                <label for="high">High</label>
+                            </div>
+                                <input type="submit">
+                        </form>
+                    </div>
+                    <div class="popup-project-contents">Project</div>
+                    <div class="popup-notes-contents">Notes</div>
+                </div>
             </div>
         </div>
     </div>
