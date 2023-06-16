@@ -22,7 +22,7 @@
     <div class="sidebar"> <!--Main div for sidebar-->
         <div class="sidebar-header"><!--div for icon and Website name-->
             <i class='bx bx-edit header-icon'></i>
-            <span class="title">Jot Down</span>
+            <span class="header-title">Jot Down</span>
             <button type="button" onclick="toggleSidebar()" class="hamburger">
                 <div class="bar"></div>
             </button>
@@ -56,12 +56,11 @@
             </ul>
         </nav>
         <div class="add-item">
-            <button type="button" class="add-button">
+            <button type="button" onclick="togglePopup()" class="add-button">
                 <i class='bx bx-plus plus-button'></i>
             </button>
         </div>
     </div>
-
     <div class="main-container">
         <div class="home-contents">
             <section class="section-todo">
@@ -89,6 +88,72 @@
                 <h2 class="section-name">Notes</h2>
             </section>
         </div> 
+    </div>
+    <div class="popup" id="popup">
+        <div class="overlay">
+            <div class="popup-container">
+                <div class="popup-header">
+                    <h1>Create new:</h1>
+                    <button type="button" onclick="togglePopup()" class="close-popup-button">
+                        <i class='bx bx-x-circle close-icon'></i>
+                    </button>
+                </div>
+                <div class="popup-sidebar">
+                    <ul class="popup-nav">
+                        <li class="popup-nav-item">
+                            <a id="popup_todo">
+                                <span>To-Do</span>
+                            </a>
+                        </li>
+                        <li class="popup-nav-item">
+                            <a id="popup_project">
+                                <span>Project</span>
+                            </a>
+                        </li>
+                        <li class="popup-nav-item">
+                            <a id="popup_note">
+                                <span>Note</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="popup-main-content">
+                    <div class="popup-todo-contents">
+                        <form class="todo-form">
+                            <div class="task">
+                                <input type="text" id="todo_title" name="todo_title" placeholder="Title: e.g Take out trash" maxlength="50" required>
+                                <input type="text" id="details" name="details" placeholder="Details: e.g internet, phone, rent." size="50" required>
+                            </div>
+                            <div class="task-due-date">
+                                <input type="date" id="due_date" name="due-date" required>
+                            </div>
+                            <div class="task-priority">    
+                                <input type="radio" id="low" name="priority" value="low">
+                                <label for="low">Low</label>
+                                <input type="radio" id="medium" name="priority" value="medium" required>
+                                <label for="medium">Medium</label>
+                                <input type="radio" id="high" name="priority" value="high">
+                                <label for="high">High</label>
+                            </div>
+                                <input type="submit" value="Add To-Do">
+                        </form>
+                    </div>
+                    <div class="popup-project-contents">
+                        <div class="project-title">
+                            <input type="text" id="project_title" name="project_title" placeholder="Title: e.g Treehouse" required>
+                        </div>
+                        <input type="submit" value="Create Project">
+                    </div>
+                    <div class="popup-notes-contents">
+                        <div class="note-task">
+                            <input type="text" id="todo_title" name="todo_title" placeholder="Title:" maxlength="50" required>
+                            <input type="text" id="details" name="details" placeholder="Details:" size="50" required>
+                        </div>
+                        <input type="submit" value="Create Note">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
