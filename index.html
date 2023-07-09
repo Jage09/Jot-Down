@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jot Down 2</title>
+    <title>Jot Down</title>
 
     <!--Add Bootstrap here-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
@@ -56,17 +56,45 @@
         </div>
     </div>
     <div class="main-container">
-        <div class="todo-contents">
+        <div class="todo-container">
             <section class="section-title">
                 <h2>To-Dos</h2>
             </section>
+            <section class="section-table">
+                <table class="todo-list">
+                    <tr>
+                        <td class="priority"></td>
+                        <td class="todo-checkbox"><input type="checkbox" class="checkbox"></td>
+                        <td class="title"></td>
+                        <td class="details"><button type="button" onClick="toggleDetails()" class="details-button">Details</button></td>
+                        <td class="date"></td>
+                        <td class="edit">                            
+                            <button type="button" onclick="" class="edit-button">
+                                <i class='bx bxs-pencil'></i>
+                            </button></td>
+                        <td class="delete">                            
+                            <button type="button" onclick="" class="delete-button">
+                                <i class='bx bx-trash'></i>
+                            </button></td></td>
+                    </tr>
+                </table>
+            </section>
         </div>
-        <div class="project-contents">
+        <div class="show-details" id="show-details">
+            <div class="header">
+                <h2>Details</h2>
+                <button type="button" onclick="toggleDetails()" class="close-popup-button">
+                    <i class='bx bx-x-circle close-icon'></i>
+                </button>
+            </div>
+            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis itaque sequi hic debitis quisquam consequatur exercitationem reprehenderit odit officia aliquid, suscipit ab libero praesentium beatae saepe enim error soluta veniam.</span>
+        </div>
+        <div class="project-container">
             <section class="section-title">
                 <h2>Projects</h2>
             </section>
         </div>
-        <div class="notes-contents">
+        <div class="notes-container">
             <section class="section-title">
                 <h2>Notes</h2>
             </section>
@@ -102,36 +130,42 @@
                 </div>
                 <div class="popup-main-content">
                     <div class="popup-todo-contents">
-                        <form class="todo-form">
-                            <div class="task">
+                        <form id="todo_form">
+                        <div class="top-content">
+                            <fieldset class="task">
                                 <input type="text" id="todo_title" name="todo_title" placeholder="Title: e.g Take out trash" maxlength="50" required>
-                                <input type="text" id="details" name="details" placeholder="Details: e.g internet, phone, rent." size="50" required>
-                            </div>
-                            <div class="task-due-date">
-                                <input type="date" id="due_date" name="due-date" required>
-                            </div>
-                            <div class="task-priority">    
-                                <input type="radio" id="low" name="priority" value="low">
-                                <label for="low">Low</label>
-                                <input type="radio" id="medium" name="priority" value="medium" required>
-                                <label for="medium">Medium</label>
-                                <input type="radio" id="high" name="priority" value="high">
-                                <label for="high">High</label>
-                            </div>
-                                <input type="submit" value="Add To-Do">
+                                <textarea id="details" name="details" placeholder="Details: e.g internet, phone, rent." rows="5" required></textarea>
+                            </fieldset>
+                            <fieldset class="task-due-date">
+                                <label for="due_date">Due Date: 
+                                    <input type="date" id="due_date" name="due-date" required>
+                                </label>
+                            </fieldset>
+                        </div>
+                        <div class="bottom-content">
+                            <fieldset class="task-priority">    
+                                <input type="radio" class="radio-input" id="low" name="priority" value="low">
+                                <label class="radio-label" for="low">Low</label>
+                                <input type="radio" class="radio-input" id="medium" name="priority" value="medium" required>
+                                <label class="radio-label" for="medium">Medium</label>
+                                <input type="radio" class="radio-input" id="high" name="priority" value="high">
+                                <label class="radio-label" for="high">High</label>
+                            </fieldset>
+                                <input type="submit" id="todo_submit" value="Add To-Do">
+                        </div>
                         </form>
                     </div>
                     <div class="popup-project-contents">
-                        <div class="project-title">
+                        <form class="project-title">
                             <input type="text" id="project_title" name="project_title" placeholder="Title: e.g Treehouse" required>
-                        </div>
-                        <input type="submit" value="Create Project">
+                            <input type="submit" value="Create Project">
+                        </form>
                     </div>
                     <div class="popup-notes-contents">
-                        <div class="note-task">
+                        <form class="note-task">
                             <input type="text" id="todo_title" name="todo_title" placeholder="Title:" maxlength="50" required>
                             <input type="text" id="details" name="details" placeholder="Details:" size="50" required>
-                        </div>
+                        </form>
                         <input type="submit" value="Create Note">
                     </div>
                 </div>
